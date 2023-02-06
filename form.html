@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container_formulario">
+
+        <header>
+            <img src="images/logo_formulario.jpg" id="logo" alt="foto de perfil">
+            <h1>Formulário</h1>
+            <nav>
+                <ul>
+                    <!-- Anchor targets #
+                    <a href="#id"></a> -->
+                    <li><a href="index.html">KEROPPI</a></li>
+                    <li><a href="store.html">LOJA</a></li>
+                </ul>
+
+            </nav>
+        </header>
+
+
+        <main>
+
+            <form>
+                <fieldset>
+                    <legend> Dados pessoais </legend>
+                    <label class="alinha"> Nome completo: </label>
+                    <input type="text" name="nome-completo" placeholder="Digite, aqui, seu nome completo..." autofocus>
+                    <br>
+
+                    <label class="alinha"> Sua idade: </label>
+                    <input type="number" name="idade" min="0" max="150"> <br>
+
+                    <label> Data de nascimento: </label>
+                    <input type="date" name="data-nascimento"> <br>
+
+                    <label> Salário pretendido: </label>
+                    <input type="number" name="salario-pretendido" step="0.01" min="0" max="30000"> <br>
+
+                    <label class="alinha"> Crie um nome de usuário: </label>
+                    <input type="text" name="usuario"> <br>
+
+                    <label class="alinha"> Forneça uma senha de usuário: </label>
+                    <input type="password" name="senha">
+
+
+                </fieldset>
+
+                <fieldset>
+                    <legend> Dados profissionais </legend>
+                    <label> Graduado em: </label> <br>
+
+                    <input type="radio" name="ano-graduacao" value="2020"> <label> Ano 2020 </label> <br>
+                    <input type="radio" name="ano-graduacao" value="2019"> <label> Ano 2019 </label> <br>
+                    <input type="radio" name="ano-graduacao" value="2018"> <label> Ano 2018 </label> <br>
+                    <input type="radio" name="ano-graduacao" value="Antes de 2018" checked> <label> Antes do ano de 2018
+                    </label> <br> <br>
+
+                    <!-- CUIDADO: ao usar elementos do tipo checkbox, não esqueça de usar colchetes [] após o atributo name-->
+
+                    <label> Selecione a área de atuação: </label> <br>
+                    <input type="checkbox" name="area-atuacao[]" value="Desenvolvimento de Sistemas" checked> <label>
+                        Experiência em Desenvolvimento de Sistemas </label> <br>
+
+                    <input type="checkbox" name="area-atuacao[]" value="Gestão de TI" checked> <label> Experiência em
+                        Gestão de TI </label> <br> <br>
+
+                    <label> Selecione a faixa salarial inicial pretendida: </label>
+                    <select name="faixa-salarial">
+                        <option> Entre R$5000,00 e R$7000,00 </option>
+                        <option> Acima de R$7000,00 </option>
+                    </select>
+
+                    <section class="cores_formulario">
+                        <p>Escolha suas três cores favoritas:</p>
+
+                        <div>
+                            <input type="color" id="head" name="head" value="#e66465">
+                            <label for="head"></label>
+                        </div>
+
+                        <div>
+                            <input type="color" id="body" name="body" value="#f6b73c">
+                            <label for="body"></label>
+                        </div>
+                        <div>
+                            <input type="color" id="body" name="body" value="#f6v5ge">
+                            <label for="body"></label>
+                        </div>
+                    </section>
+
+                    <label>Mensagem:</label><br>
+                    <textarea class="msg" cols="35" rows="8"></textarea>
+
+                    <br>
+
+                    <label for="avatar">Escolha uma foto</label>
+
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+
+                    <br>
+
+                    <label><span>Telefone: </span><input type="text" class="tel-number-field" name="tel_no_1" value=""
+                            maxlength="9" />
+                </fieldset>
+
+                <button> Cadastrar currículo on-line </button>
+            </form>
+
+            <div class="button-container-div">
+                <button value="Voltar ao início" onclick="window.location.href='#top'">Voltar ao início!</button>
+            </div>
+        </main>
+
+
+        <footer>
+
+
+        </footer>
+
+
+    </div>
+
+</body>
+
+</html>

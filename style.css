@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* include the padding and border in an element's total width and height */
+    /* background-color: #7159c1; */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #D6E007;
+    grid-area: header;
+    border-bottom: 3px solid black;
+    /* position: sticky;
+    top: 0;  position e top é para deixar header fixo na rolagem*/
+
+    /*border-bottom: 5px solid black;*/
+    /*grid-column: 1/3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    starta na coluna 1 e vai até a 3*/
+}
+
+hr {
+    width: 90%;
+    /* border: 5px solid #d400ff; */
+    border: 5px solid green;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+aside {
+    background: #d5e007a1;
+    grid-area: aside;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    /*grid-column-start: 2;
+    grid-column-end: 3;*/
+}
+
+
+main {
+    background: #d400ffa9;
+    border-bottom: 2px solid black;
+    /* background: #8605f786; */
+    grid-area: main;
+    /*grid-column-start: 1;
+    grid-column-end: 2;*/
+
+    /* flex: 1;
+    overflow-y: scroll */
+    /* adiciona scroolbar apenas na parte main */
+}
+
+.resumo {
+    margin-left: 75px;
+    margin-top: 70px;
+}
+
+.experiencia,
+.educacao {
+    margin-left: 75px;
+    margin-top: 40px;
+}
+
+main p,
+.experiencia h3 {
+    text-align: justify;
+    padding-right: 100px;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.competencias,
+.habilidades {
+    text-align: center;
+    list-style-type: square;
+}
+
+.competencias ul,
+.habilidades ul,
+.experiencia ul {
+    list-style-type: square;
+    text-align: left;
+    margin-left: 30px;
+    line-height: 3;
+    font-size: 24px;
+    list-style-type: "🐸";
+}
+
+
+.button {
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+footer {
+    background: #d400ff;
+    background-image: url("images/footer2.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-area: footer;
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    /*cria colunas -- fr --> coluna flex fração */
+    grid-template-rows: 20vh 100% 10vh;
+    /* vh visão da altura que estou vendo 
+    segunda linha 100% pra NÃO dar OVERFLOW e passar pelo footer
+    mas podemos também fazer scrollbar no main (olhar comentários no main)*/
+    grid-template-areas: "header header"
+        "aside main"
+        "footer footer";
+    /* Quero que na linha um seja ocupada pelo header e header, na linha dois main e aside 
+       E usamos grid area nos Itens para definir o nome 
+       se nao quer nada no espaço coloca . */
+}
+
+/* Responsive CSS Grid: */
+@media only screen and (max-width:850px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 2fr 0.2fr;
+        grid-template-areas: "header" "aside" "main" "footer";
+    }
+}
+
+#logo {
+    margin: 5px 40px;
+    border-radius: 100%;
+    border: 5px solid black;
+    box-shadow: 5px 5px 2px;
+    width: 200px;
+    height: 160px;
+    /* max-width: 12%;
+    height: auto; */
+}
+
+.redes_sociais {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.linkedin_image,
+.twitter_image {
+
+    width: 40px;
+    margin: 10px;
+
+}
+
+.sanrio_image {
+    width: 120px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    padding-right: 34px;
+}
+
+nav ul li {
+    padding-right: 60px;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+
+header h1 {
+    font-size: 6vw;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+header a {
+    text-decoration: none;
+    color: #555;
+    transition: all 0.3s ease 0s;
+}
+
+table a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease 0s;
+}
+
+header a:hover,
+table a:hover {
+    color: #b2dfdb;
+}
+
+
+h2 {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    width: 600px;
+    height: 40px;
+    font-size: 25px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    background-color: #4cff4c;
+}
+
+.dadosindis {
+    background-color: #4cff4c;
+}
+
+.thick {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+button {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.button-container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* pode também apenas deixar display block e margin auto para o botao ficar centralizado */
+}
+
+.lowscore {
+    color: red;
+}
+
+
+/* PÁGINA DO FORMULÁRIO: */
+
+.container_formulario {
+    display: grid;
+    grid-template-columns: 1fr;
+    /*cria colunas -- fr --> coluna flex fração */
+    grid-template-rows: 20vh 100% 10vh;
+    /* vh visão da altura que estou vendo 
+    segunda linha 100% pra NÃO dar OVERFLOW e passar pelo footer
+    mas podemos também fazer scrollbar no main (olhar comentários no main)*/
+    grid-template-areas: "header"
+        "main"
+        "footer";
+    /* Quero que na linha um seja ocupada pelo header e header, na linha dois main e aside 
+       E usamos grid area nos Itens para definir o nome 
+       se nao quer nada no espaço coloca . */
+}
+
+
+.redes_sociais_formulario {
+    margin-top: 0px;
+}
+
+.cores_formulario {
+    display: flex;
+    margin-top: 10px;
+}
+
+.cores_formulario p {
+    font-size: 20px;
+    margin: 0px;
+}
+
+.cores_formulario div {
+    padding-right: 30px;
+}
+
+fieldset {
+    width: 40%;
+    margin: 30px auto;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-image: url(https://pbs.twimg.com/media/FXE10cMWYAEl-RQ?format=jpg&name=4096x4096);
+    box-shadow: 10px 10px 15px rgba(100, 100, 100, 2.5);
+    font-size: 20px;
+    font-family: "Yanone Kaffeesatz", "Trebuchet MS";
+    line-height: 36px;
+}
+
+
+.alinha:after {
+    content: " *";
+    color: red;
+}
+
+form button {
+    font-family: "Yanone Kaffeesatz", "Trebuchet MS";
+    font-size: 25px;
+    margin: auto;
+    display: block;
+    margin-bottom: 5px;
+    height: 80px;
+    font-weight: bold;
+}
+
+
+/* PÁGINA DA LOJA */
+
+.carrinho_icon {
+    list-style-type: "🛒";
+}
+
+.carrinho_icon {
+    margin-top: -03px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border: 5px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    margin: 40px 20px;
+    background-color: white;
+}
+
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+
+}
+
+.product-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 50px 0;
+    text-align: center;
+}
+
+
+.product-price {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: orange;
+}
+
+.add-to-cart-button {
+    padding: 10px 20px;
+    background-color: orange;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin-top: 15px
+}
+
+.add-to-cart-button:hover {
+    background-color: darkorange;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: lightgray;
+    font-size: 0.875rem;
+}
+
+.discount-price {
+    color: orange;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.product-description {
+    font-size: 0.875rem;
+    margin: 10px 0;
+    text-align: center;
+    padding: 0px;
+}
+
+.gradiente {
+    background: radial-gradient(circle, rgba(135, 3, 250, 1) 0%, rgba(189, 137, 235, 1) 56%, rgba(219, 255, 178, 1) 98%);
+}
+
+.product-card:hover>.product-image {
+    transform: scale(1.2);
+}
+
+/* .product-image:hover {
+    transform: scale(1.2);
+} só aumenta a foto se o mouse for em cima dela */
+/*  expande a imagem dentro do card */
+
+
+/* .product-card:hover {
+    transform: translateY(-5px);
+} */
+/*  eleva no eixo y o card */
+
+
+
+/* PÁGINA DO CARRINHO */
+
+.checkout-details-inner {
+    background: #F2F2F2;
+    border-radius: 10px;
+    padding: 20px;
+    width: 40%;
+    margin: 20px auto;
+
+
+}
+
+.checkout-lists {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 40px;
+    margin-left: 50px;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    column-gap: 15px;
+}
+
+.card-image {
+    width: 25%;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-name {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.card-price {
+    font-size: 20px;
+    font-weight: 500;
+    color: #F2994A;
+    margin-top: 5px;
+}
+
+span {
+    color: #4E5150;
+    text-decoration: line-through;
+    margin-left: 16px;
+}
+
+.card-wheel {
+    margin-top: 17px;
+    border: .2px solid #4e515085;
+    width: 180px;
+    padding: 8px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart {
+    background: #E0E0E0;
+    color: #828282;
+    width: 5px;
+    height: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 0%;
+}
+
+.checkout-shipping,
+.checkout-total {
+    display: flex;
+    font-size: 26px;
+    padding: 5px 0px;
+    border-top: 1px solid #BDBDBD;
+    justify-content: space-between;
+}
+
+.checkout-details-inner p {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.qtd {
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0%;
+
+}
+
+.form-control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.form-control-btn button {
+    font-family: "Yanone Kaffeesatz", "Trebuchet MS";
+    font-size: 25px;
+    display: block;
+    margin-bottom: 5px;
+    height: 80px;
+    font-weight: bold;
+}
