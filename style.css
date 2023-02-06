@@ -176,6 +176,7 @@ nav ul {
     flex-direction: row;
     list-style: none;
     padding-right: 34px;
+    line-height: 40px;
 }
 
 nav ul li {
